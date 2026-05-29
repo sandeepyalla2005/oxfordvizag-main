@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+@theme {
+  /* === BRAND COLORS - ADARSH OXFORD SCHOOL === */
+  --color-brand-blue: #2563EB;
+  --color-brand-blue-dark: #1D4ED8;
+  --color-brand-blue-light: #3B82F6;
+  --color-brand-navy: #0F172A;
+  --color-brand-navy-mid: #1E3A8A;
+  --color-brand-gold: #F59E0B;
+  --color-brand-gold-dark: #D97706;
+  --color-brand-red: #ED1C24;
+  --color-brand-cyan: #06B6D4;
+  --color-brand-cyan-dark: #0891B2;
+  --color-brand-gray: #64748B;
+
+  /* Light Backgrounds */
+  --color-bg-pure: #FFFFFF;
+  --color-bg-soft: #F8FAFC;
+  --color-bg-gray: #F1F5F9;
+  --color-bg-ice: #EFF6FF;
+  --color-text-dark: #0F172A;
+
+  --font-montserrat: var(--font-montserrat), sans-serif;
+  --font-poppins: var(--font-poppins), sans-serif;
+  --font-inter: var(--font-inter), sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
+}
+
+:root {
+  --background: #F8FAFC;
+  --foreground: #0F172A;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* ===== CUSTOM SCROLLBAR ===== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #F1F5F9; }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #2563EB, #F59E0B); border-radius: 4px; }
+
+/* ===== GLASSMORPHISM UTILITIES ===== */
+.glass-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.08), 0 2px 8px rgba(0,0,0,0.04);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  box-shadow: 0 16px 48px rgba(37, 99, 235, 0.14), 0 4px 16px rgba(0,0,0,0.06);
+  transform: translateY(-3px);
+  border-color: rgba(37, 99, 235, 0.15);
+}
+
+.glass-card-accent {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 24px rgba(37, 99, 235, 0.07), 0 2px 8px rgba(0,0,0,0.03);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-accent:hover {
+  box-shadow: 0 12px 40px rgba(37, 99, 235, 0.13), 0 4px 16px rgba(0,0,0,0.06);
+  transform: translateY(-4px);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+
+/* ===== TICKER ANIMATION ===== */
+@keyframes ticker {
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
+}
+.animate-ticker {
+  display: inline-block;
+  white-space: nowrap;
+  animation: ticker 32s linear infinite;
+}
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
+
+/* ===== FLOAT ANIMATIONS ===== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-12px) rotate(1deg); }
+  66% { transform: translateY(-6px) rotate(-1deg); }
+}
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(-8px); }
+  50% { transform: translateY(8px); }
+}
+
+.animate-float { animation: float 5s ease-in-out infinite; }
+.animate-float-slow { animation: float-slow 8s ease-in-out infinite; }
+.animate-float-reverse { animation: float-reverse 6s ease-in-out infinite; }
+
+/* ===== ORB PULSE ===== */
+@keyframes pulse-orb {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+}
+.animate-pulse-orb { animation: pulse-orb 6s ease-in-out infinite; }
+
+/* ===== SPIN SLOW ===== */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow { animation: spin-slow 30s linear infinite; }
+
+/* ===== HERO OVERLAY ===== */
+.hero-overlay {
+  background: linear-gradient(135deg,
+    rgba(15, 23, 42, 0.72) 0%,
+    rgba(30, 58, 138, 0.55) 40%,
+    rgba(37, 99, 235, 0.35) 70%,
+    rgba(245, 158, 11, 0.12) 100%
+  );
+}

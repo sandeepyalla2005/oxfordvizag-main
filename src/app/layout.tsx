@@ -26,6 +26,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Adarsh Oxford English Medium School | Seethamadhara, Visakhapatnam",
   description: "Welcome to Adarsh Oxford English Medium School, Seethamadhara, Visakhapatnam. A Way and a Vision. A premium educational brand focused on academic excellence, holistic growth, and trusted admissions.",
+  icons: {
+    icon: "/logo.jpg",
+    shortcut: "/logo.jpg",
+    apple: "/logo.jpg",
+  },
 };
 
 export default function RootLayout({

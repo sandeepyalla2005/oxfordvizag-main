@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/sections/Hero";
+import Dashboard from "@/components/sections/Dashboard";
 import WaveStats from "@/components/sections/WaveStats";
 import About from "@/components/sections/About";
 import Academics from "@/components/sections/Academics";
@@ -22,6 +23,7 @@ export default function Home() {
       {/* Main Content */}
       <main className="flex-grow">
         <Hero />
+        <Dashboard />
         <WaveStats />
         <About />
         <Academics />
